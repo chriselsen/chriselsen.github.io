@@ -1,82 +1,91 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>{{ page.title }}</title>
-
-    <link rel="stylesheet" href="https://github.com/themes/minimal/stylesheets/styles.css">
+    <title>{% if page.title }%} - {{page.title}}{% endif %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Le styles -->
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
     <style>
-      header { zoom: 1.2; }
-      header h1 { margin-bottom: 5px; }
-      header h1 a { color: #494949; font-weight: bold; }
-      header h3 { margin-top: 20px; margin-bottom: 5px; }
-      header p.view { margin-bottom: 5px; }
-      header p.view small { padding-top: 2px; }
-      header ul {
-        zoom: 0.7;
-        margin-top: 25px;
-      }
-      section p { margin-top: 10px; }
-      section h1 { margin-bottom: 15px; }
-      section h2 { margin-bottom: 10px; }
-      section h2 { margin-bottom: 10px; }
-      footer { bottom: 20px; }
-      footer p { margin-bottom: 5px; }
-      .half-width {
-        float: left;
-        width: 200px;
-        list-style: none;
-        padding: 5px;
-        margin: 7px;
-        margin-bottom: 10px;
-      }
-      .half-width h4 {
-        margin-bottom: 5px;
-      }
-      .half-width ul {
-        padding-left: 0;
-      }
-      .half-width ul li {
-        list-style: inside;
-        font-size: 15px;
-      }
-      .clear-fix {
-        clear: both;
-      }
+      body { padding-top: 60px; /* 60px to make the container go all the way
+      to the bottom of the topbar */ }
     </style>
-    <script src="https://github.com/themes/minimal/javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/assets/css/docs.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+      </script>
+    <![endif]-->
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+    <style>
+    </style>
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1><a href="/">ChrisElsen.net</a></h1>
-        
-        <!-- <h3>Main items</h3> -->
-        <p class="view"><a href="https://www.edge-cloud.net" target="tab">Edge-Cloud.net<small>Blog on data centers, virtualization, networking and cloud computing</small></a></p>
-        <p class="view"><a href="http://cloud-surfer.net" target="tab">Cloud-Surfer.net<small>Blog on Quadcopters and more</small></a></p>
-
-        <h3>I'm also on</h3>
-        <p class="view"><a href="https://twitter.com/ChristianElsen" target="tab">Twitter<small>If you tweet</small></a></li>
-        <p class="view"><a href="https://www.linkedin.com/in/christianelsen" target="tab">LinkedIn<small>To connect</small></a></li>
-        <p class="view"><a href="https://github.com/chriselsen" target="tab">GitHub<small>If coding is your thing</small></a></li>
-		
-		<h3>My stuff</h3>
-        <p class="view"><a href="https://outlook.office365.com/owa/" target="tab">OWA<small>Outlook Web Access</small></a></li>
-        		
-      </header>
-      <section id="main">
-        {{ content }}
-      </section>
-      <footer>
-        <!-- <p>This is the site of Christian Elsen</p> -->
-        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+    <!--<a href="https://github.com/chriselsen/chriselsen.github.io"><img style="position: absolute; z-index: 10000; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>-->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a href="/" class="brand"><img src="http://www.kangaroonet.de.s3.amazonaws.com/kangaroonet.gif"></a>
+          <ul class="nav pull-right">
+            <li><a href="http://www.chriselsen.net/">Christian Elsen</a></li>
+            <li><a href="http://www.chriselsen.net/#about">About</a></li>
+            <!-- <li><a href="http://www.edge-cloud.net/" target="_blank">Edge-Cloud Blog</a></li> -->
+            <li><a href="https://github.com/chriselsen/chriselsen.github.io" target="_blank">Fork This!</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="span3">
+          <ul id="menu" class="nav nav-list" data-spy="affix">
+            <li class="nav-header">Blogs</li>
+            <li data-section=""><a href="/">Home</a></li>
+            <li class="nav-header">I'm also on...</li>
+            <li data-section="jetstrap/gettingstarted"><a href="/jetstrap/gettingstarted.html">Getting Started</a></li>
+            <li data-section="builder/components"><a href="/builder/components.html">Components</a></li>
+            <li class="nav-header">SUPPORT</li>
+            <li><a href="mailto:info@chriselsen.net">Contact</a></li>
+          </ul>
+        </div>
+        <div class="span9">
+{{content}}
+        </div>
+      </div>
     </div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
-    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    <style>
+      
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+    </script>
+    <script src="/assets/js/bootstrap.js">
+    </script>
+
+    <script>
+      $('#menu [data-section="{{page.section}}"]').addClass('active');
+    </script>
+
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39076327-3']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
   </body>
 </html>
