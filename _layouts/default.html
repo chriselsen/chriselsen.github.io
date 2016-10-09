@@ -54,7 +54,7 @@
 	var data;
 	var obj;
 	var client = new XMLHttpRequest();
-	client.open("GET", "/ipver.php", false);
+	client.open("GET", "/cdn-cgi/edge-info", false);
 	client.onreadystatechange =
 		function () {
 			if(client.readyState === 4){
