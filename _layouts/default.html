@@ -66,9 +66,9 @@
 	client.send(null);
 	obj= processData(data);
 
-	__gaTracker('set','dimension1',objData('edgeloc'));
-	__gaTracker('set','dimension2',objData('ipver'));
-	__gaTracker('set','dimension3',objData('httpver'));
+	ga('set','dimension1',objData('edgeloc'));
+	ga('set','dimension2',objData('ipver'));
+	ga('set','dimension3',objData('httpver'));
 	
   	ga('send', 'pageview');
 
