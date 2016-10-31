@@ -1,3 +1,5 @@
 markdown: rdiscount
 highlighter: rouge
 permalink: /:title
+gems:
+  - jekyll-sitemap
