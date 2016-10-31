@@ -6,6 +6,7 @@ env:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true  
 install: 
   - gem install jekyll
+  - gem install jekyll-sitemap
   - gem install html-proofer
 script: 
   - jekyll build --config _config.yml
