@@ -1,12 +1,10 @@
 language: ruby
-rvm:
-  - 2.3.1
 env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true  
-sudo: false
-cache: bundler
-install: gem install jekyll html-proofer
+install: 
+  - gem install jekyll
+  - gem install html-proofer
 script: 
   - jekyll build --config _config.yml
   - htmlproofer ./_site --url-ignore "/www.linkedin.com/"
