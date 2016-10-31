@@ -1,11 +1,8 @@
 language: ruby
 rvm:
   - 2.2
-before_install:
-  - npm install
-  - pip install --user pillow
 install: gem install jekyll html-proofer
-script: npm run travis
+script: jekyll build --config _config.yml && htmlproofer ./_site 
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
