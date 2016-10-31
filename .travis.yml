@@ -7,4 +7,4 @@ env:
 sudo: false
 cache: bundler
 install: gem install jekyll html-proofer
-script: jekyll build --config _config.yml && htmlproofer ./_site --url-ignore "/www.linkedin.com/" --check_favicon "true" --check_html "true"
+script: jekyll build --config _config.yml && htmlproofer ./_site --url-ignore "/www.linkedin.com/"
