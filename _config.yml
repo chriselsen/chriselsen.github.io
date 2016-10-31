@@ -1,5 +1,22 @@
+title: Christian Elsen
+description: Personal web page of Christian Elsen
+author: 
+  twitter: ChristianElsen
+url: https://chris.elsen.xyz
+twitter:
+  username: ChristianElsen
+social:
+  name: Christian Elsen
+  links:
+    - https://twitter.com/ChristianElsen
+    - https://www.linkedin.com/in/ChristianElsen
+    - https://plus.google.com/+ChristianElsen
+    - https://github.com/chriselsen
+seo:
+  type: Person
 markdown: rdiscount
 highlighter: rouge
 permalink: /:title
 gems:
   - jekyll-sitemap
+  - jekyll-seo-tag
