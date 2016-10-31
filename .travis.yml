@@ -9,6 +9,7 @@ install:
   - gem install jekyll-sitemap
   - gem install jekyll-seo-tag
   - gem install html-proofer
+  - gem install rdiscount
 script: 
   - jekyll build --config _config.yml
   - htmlproofer ./_site --url-ignore "/www.linkedin.com/"
