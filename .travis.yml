@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.3.0
+  - 2.3.1
 install: gem install jekyll html-proofer
 script: jekyll build --config _config.yml && htmlproofer ./_site --url-ignore "/www.linkedin.com/"
 env:
