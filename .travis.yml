@@ -4,6 +4,8 @@ rvm:
 env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true  
+notifications:
+  email: false
 install: 
   - gem install jekyll
   - gem install jekyll-sitemap
