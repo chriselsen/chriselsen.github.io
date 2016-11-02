@@ -1,8 +1,10 @@
+
 title: Christian Elsen
 description: Personal web page of Christian Elsen
 author: 
   twitter: ChristianElsen
-url: https://chris.elsen.xyz
+url: 'https://edge-cloud.github.io/'
+baseurl: 'https://edge-cloud.github.io/'
 twitter:
   username: ChristianElsen
 social:
@@ -16,7 +18,21 @@ seo:
   type: Person
 markdown: rdiscount
 highlighter: rouge
-permalink: /:title
+
+# Enable one of these styles by removing #
+style: styles
+
+#Profile information
+name: Christian Elsen
+tagline: Technology Generalist
+pic: profile.png
+
+#sidebar links
+website: edge-cloud.net
+linkedin: ChristianElsen
+github: chriselsen
+twitter: ChristianElsen
+
 gems:
   - jekyll-sitemap
   - jekyll-seo-tag
