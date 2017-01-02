@@ -22,7 +22,7 @@ deploy:
   acl: public_read
   bucket: chris-elsen-xyz
   local_dir: _site
-  cache_control: "max-age=21600"
+  cache_control: "max-age=86400"
   expires: "2020-12-31 00:00:00 -0000"
   access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key: $AWS_SECRET_ACCESS_KEY
