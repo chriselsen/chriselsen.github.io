@@ -6,8 +6,9 @@ env:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 notifications:
   email: false
+cache: pip
 install:
-  - sudo pip install awscli
+  - pip install awscli
   - gem install jekyll
   - gem install jekyll-sitemap
   - gem install jekyll-seo-tag
@@ -23,11 +24,10 @@ deploy:
   bucket: chris-elsen-xyz
   local_dir: _site
   cache_control: "max-age=21600"
-  expires: "`date --date="1 year" +"%Y-%m-%d 00:00:00 -0000"`"
+  expires: "2020-12-31 00:00:00 -0000"
   access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key: $AWS_SECRET_ACCESS_KEY
   skip_cleanup: true
 after_deploy:
   - aws configure set preview.cloudfront true
   - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
-  - echo `date --date="1 year" +"%Y-%m-%d 00:00:00 -0000"`
