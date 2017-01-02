@@ -6,9 +6,8 @@ env:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 notifications:
   email: false
-cache: pip
 install:
-  - pip install awscli
+  - sudo pip install awscli
   - gem install jekyll
   - gem install jekyll-sitemap
   - gem install jekyll-seo-tag
