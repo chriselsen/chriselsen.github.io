@@ -7,6 +7,7 @@ env:
 notifications:
   email: false
 install:
+  - sudo pip install awscli
   - gem install jekyll
   - gem install jekyll-sitemap
   - gem install jekyll-seo-tag
@@ -21,9 +22,13 @@ deploy:
   acl: public_read
   bucket: chris-elsen-xyz
   local_dir: _site
-  cache_control: "max-age=3600"
+  cache_control: "max-age=21600"
+  expires: "2020-12-31 00:00:00 -0000"
   access_key_id:
     secure: i44Wy2KrB5QjXez5l2bTQ6JWriKcRlIPMcNQKXk2Ob5mt7mKaxm3XYSzISowxmhf+mHJ521E6v4qvRCZDiZgJ03wCvhmTWaekbvUHR3Ui+tunnfWuyuv68gGFvgERCAV7cDymSrSiVope1soAFBrsfzkWnfuKVncU5aWuq8i3oI/2fHtO7Xk4gxXd65wqLOJYvfCtSLgYgXF91AIz+5+7lr6hWPeB+nTgR6VgIVjk1qwEnt4eGAKqRXfs825E/eEL92KjRo9mx4Sx1PUuuUezFF7UgPbBWJyo/NlHEwvz57yJMOOlECTKiSuWMG/jAqOeaDhrO4JU3YoO/n1g43YDwDT7PaAV6jhR6UWMlzyGKE8jfMXoj38yxJqsKJ3knGbzNroyJLcVTAyW9X0R9e5E1EvIn0whxG6ikNVhc9s//wBU3BYdTRsy+nGXQVmLrUP6kd3i5Edj7KBfiivRPH6jtFenY/SqmLD5H7UCWFCboQfoji3RWCDIj4s5a8y3sO/cvfJQgBbi7gqAf9YbdGPqcGRlecJ9VqAFyHf6iFneYBUFgSROxuwnGnK0HIlJ9TSRMc6UYMGHjfEhkkL1o54g5JPagwoR1tVlRHz4k8Rwq6gSaWaDbvO5s6XmzfWyUD2kJai4sTlsqsCIA42ReBnP+KOgFpYzoqJx6H3+hA8rBA=
   secret_access_key:
     secure: OmhFutvM9ANQ+84qQhEUmDjxlMg7Q3rdm1hUFPOPJe5SVFmOnmUXv9/xBu9fO7JP17fjVb/MI3rmRzDcsibs7CeR0g2prT52SfNu5GEZW6v8/+Pa9E5gaLGlv3GTe1S9vrqBm22/lN2vcVEgAAn3H1IJi1zdclOyf8jo9dwWGAUHY9GonINWTsvfRmsVSDvYSLVwSfXhwMSpvdZ0apjhK5SUMPkG51KMsEnwxYUO63EdsSSRoLpZJYc1dUS1VLomJFbLH9uME/9cwPgei6Gvacjv9oOqmECwLxhHjzIhwCEvnTroTCrzd6sA8WSAbkvkRZKWj+smwuXX0PhQVLQRUYZLDVGDwUS2QGzzYOVr1BnUC2CSCIWcAB8ZWY1rdX7pj8LKcvb+YpAQH9SAWrU+un2E0bDd9DURYvJ71HM5wSlpDqlim7fdVav4wLLZRRCtpnhGdu3uT/6rgx0x3HFBJWHnaQ5tiVUXsFOTv8gryGZJdMoTqDF9RryUo3m6KcLGwyWzm0FrkGB6+eg3sWIxEUr90FrBKVqhj0RAnfc73lfYbF/uveXdOBjYHF2cDlZ8+fEykstoX6KoSc9IPyyZeuULvqjdClQ50CB7JgeFSuvWaHQ1hK3cxiVAaSfx6RAeJ+99VxsPblcI2NoYprlWOLiPYNp+fNipS1rAqJX1y+A=
   skip_cleanup: true
+after_deploy:
+  - aws configure set preview.cloudfront true
+  - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
