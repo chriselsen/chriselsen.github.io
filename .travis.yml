@@ -19,7 +19,7 @@ deploy:
   provider: s3
   region: us-west-2
   acl: public_read
-  bucket: chris.elsen.xyz
+  bucket: chris-elsen-xyz
   local_dir: _site
   detect_encoding: true
   access_key_id:
