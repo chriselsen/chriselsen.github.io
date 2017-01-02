@@ -3,15 +3,27 @@ rvm:
   - 2.3.1
 env:
   global:
-    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true  
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 notifications:
   email: false
-install: 
+install:
   - gem install jekyll
   - gem install jekyll-sitemap
   - gem install jekyll-seo-tag
   - gem install html-proofer
   - gem install rdiscount
-script: 
+script:
   - jekyll build --config _config.yml
   - htmlproofer ./_site --url-ignore "/www.linkedin.com/"
+deploy:
+  provider: s3
+  region: us-west-2
+  acl: public_read
+  bucket: chris.elsen.xyz
+  local_dir: _site
+  detect_encoding: true
+  access_key_id:
+    secure: I4ukl1oMVQEhcunnbelR1UU8+OY1wqu0eheXecZnlSiRtq2PknWiOq9JyzxJ6yAVXz0uNNkKaFKDFZ3DVPUFuJznEsEJmhA/dDCJ0y0UyNG1tcCJzQUuq49ioI8lCMxz66yYy4DU9LPU5Wq2gzWzCyqsEy3kOXhSAI8sI06NrRQAfSHAYNP7Ru3yk+IOx4aT6FvreCVULF0DEcR6d4MqtHf7J7SfwRpBtbdbIKRnPVlHwcCJ0KrMk95ns49Rcrqd8y54CmrDlGoWBu6pFmaV3y3+kqnP2EFowyEbUnRLoEkvLR2NEaQrmmQyTyBARiXhHvwhgivKlgUgGREpICMz18rZUJsisLjlQFhAAvBinyyMCKdQ13rD6pjQree4vbTTa9Iuyw/1r11Ne9rvhJ3wdAYf5vnhhjdUh/FGryC2/KLkxbd9BLAgcv2qwQ22rqh2rB8fmEnr+pNxnH2iFsPpycLcGlGHGv4dduullXov6OjL+ibi7mdwNPMThCq131DtG60SdORgDZLg5e+T7YsO8P8CW4AHYSy4br2ozVo3L48kxmRL90v42hrp0/veXMvHjAQ5Azp/TRRxmkhWkdwlTfTM/k6xvLXbQHP+hym7XdnVDOrj4tLIb0utMMNMlI6oV5F3Cia1UDiLuGzzyUgvrXM0tecutgkvy1GWDyJ9EHU=
+  secret_access_key:
+    secure: bAv5JU8IzcJlhhql74osuq4yGwca6cLrqUJ/y5b3Qu8zCnRABW+QrUkRcZU8skkXffBcACx+YQACaRf87SDRLv0mX475U8uvgvLmf6s+zL5DkmWk4gVuCuh2aVFwKXYVyUQt64TvfXygkQzbDQDmwRzj9Nem+/hwsiRqfWINOUgpZFok6YCRkUzi16qu2o+fWmD7DTLAe6pjlJXiDsjjj8FShN6C5hr9t2Ws7OXBDOBnnKEs8ppyC8YIw8JXCduhqXHWEB4V7rfBrlAUJ+83wwB5MIRu5qF9qog2G6cBNRAcXYLLicnAktUUufY1ESO2Ta2shrqF8zeInDLMbrERIvoK1ptCo4cndBQDAzfSCONco/+n5sGQuj9Og7KgvmPS2nmHeq1swyR3A2CWEKytJF4XgRRjTan96P6TlsTANaVLFfziPKqgQdqRalkF7ODy4PSZKyhYbjRGICDEbwcZ3npi4SmBsw5bLGeTxM7Wc35MqHslurjF3X9TjeaQLcBXIk54Dzj+bO4qoV4rW0zVQ5Mtw3UgYobJXP5yjMUYYfwVkbwJQpjtAvN7dBMd3C1RJ1dw53dVpWDGvcIzzF2pL7eWVUrWdjuhoufmRR8JD71nTrGGzjiOyFh6c3gXN5tHiNxchI9E/OJNVSUkP9dE2p05ZG22azE2NcOu5/0Bpu8=
+  skip_cleanup: true
