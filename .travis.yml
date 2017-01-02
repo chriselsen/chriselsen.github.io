@@ -14,7 +14,7 @@ install:
   - gem install rdiscount
 script:
   - jekyll build --config _config.yml
-  - htmlproofer ./_site --url-ignore "/www.linkedin.com/"
+  - htmlproofer ./_site --url-ignore "/www.linkedin.com/,/chris.elsen.xyz/"
 deploy:
   provider: s3
   region: us-west-2
