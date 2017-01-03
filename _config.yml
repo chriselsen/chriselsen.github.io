@@ -17,8 +17,6 @@ seo:
   type: Person
 markdown: rdiscount
 highlighter: rouge
-sass:
-  style: compressed
 
 gems:
   - jekyll-sitemap
