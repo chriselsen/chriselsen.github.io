@@ -206,7 +206,7 @@ p {
   font-weight: 500;
 }
 .main-wrapper .time {
-  margin-bottom: 15px;
+  margin-bottom: 0px;
   //position: absolute;
   //right: 0;
   //top: 0;
