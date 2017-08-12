@@ -206,9 +206,10 @@ p {
   font-weight: 500;
 }
 .main-wrapper .time {
-  position: absolute;
-  right: 0;
-  top: 0;
+  margin-bottom: 15px;
+  //position: absolute;
+  //right: 0;
+  //top: 0;
   color: #97AAC3;
 }
 .main-wrapper .company {
