@@ -18,7 +18,7 @@ seo:
 markdown: rdiscount
 highlighter: rouge
 
-gems:
+plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
