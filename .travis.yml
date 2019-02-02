@@ -27,11 +27,6 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY_ID
     secret_access_key: $AWS_SECRET_ACCESS_KEY
     skip_cleanup: true
-  - provider: gcs
-    access_key_id: $GCP_ACCESS_KEY_ID
-    secret_access_key: $GCP_SECRET_ACCESS_KEY
-    bucket: "chris.elsen.xyz"
-    skip_cleanup: true
 after_deploy:
   - aws configure set preview.cloudfront true
   - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
