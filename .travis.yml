@@ -1,13 +1,13 @@
 language: ruby
 rvm:
-  - 2.3.1
+  - 2.5.3
 env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 notifications:
   email: false
 install:
-  - sudo pip install awscli
+  - pip install --user awscli
   - gem install jekyll
   - gem install jekyll-sitemap
   - gem install jekyll-seo-tag
@@ -15,15 +15,20 @@ install:
   - gem install rdiscount
 script:
   - jekyll build --config _config.yml
-  - htmlproofer ./_site --url-ignore "/www.linkedin.com/,/chris.elsen.xyz/"
+  - htmlproofer ./_site --http-status-ignore "999" --url-ignore "/chris.elsen.xyz/"
 deploy:
   - provider: s3
+    edge:
+      source: chriselsen/dpl
+      branch: edge-cloud
     region: us-west-2
     acl: public_read
+    max_threads: 25
     bucket: chris-elsen-xyz
     local_dir: _site
-    cache_control: "max-age=2592000"
-    expires: "2030-12-31 00:00:00 -0000"
+    default_text_charset: "utf-8"
+    cache_control: "\"public, max-age=31536000\": *.jpg, *.gif, *.png, *.webp, *.css, *.js, *.ico"
+    expires: "\"`date -u +\"%Y-%m-%d %H:%M:%S -0000\" --date \"next Year\"`\": *.jpg, *.gif, *.png, *.webp, *.css, *.js, *.ico"
     access_key_id: $AWS_ACCESS_KEY_ID
     secret_access_key: $AWS_SECRET_ACCESS_KEY
     skip_cleanup: true
