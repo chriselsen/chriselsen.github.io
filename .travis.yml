@@ -20,7 +20,7 @@ deploy:
   - provider: s3
     edge:
       source: travis-ci/dpl
-      branch: edge-cloud
+      branch: master
     region: us-west-2
     acl: public_read
     max_threads: 25
