@@ -15,7 +15,7 @@ social:
     - https://github.com/chriselsen
 seo:
   type: Person
-markdown: rdiscount
+markdown: kramdown
 highlighter: rouge
 
 plugins:
