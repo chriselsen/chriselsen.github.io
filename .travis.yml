@@ -19,7 +19,7 @@ script:
 deploy:
   - provider: s3
     edge:
-      source: chriselsen/dpl
+      source: travis-ci/dpl
       branch: edge-cloud
     region: us-west-2
     acl: public_read
