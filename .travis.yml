@@ -23,12 +23,12 @@ deploy:
       branch: master
     region: us-west-2
     acl: public_read
-    max_threads: 25
+    max_threads: 15
     bucket: chris-elsen-xyz
     local_dir: _site
     default_text_charset: "utf-8"
-    cache_control: "\"public, max-age=31536000\": *.jpg, *.gif, *.png, *.webp, *.css, *.js, *.ico"
-    expires: "\"`date -u +\"%Y-%m-%d %H:%M:%S -0000\" --date \"next Year\"`\": *.jpg, *.gif, *.png, *.webp, *.css, *.js, *.ico"
+    cache_control: "public, max-age=31536000: *.{jpg,gif,png,webp,css,js,ico}"
+    expires: "`date -u +\"%Y-%m-%d %H:%M:%S -0000\" --date \"next Year\"`: *.{jpg,gif,png,webp,css,js,ico}"
     access_key_id: $AWS_ACCESS_KEY_ID
     secret_access_key: $AWS_SECRET_ACCESS_KEY
     skip_cleanup: true
