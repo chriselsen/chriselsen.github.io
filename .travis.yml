@@ -15,7 +15,7 @@ install:
   - gem install rdiscount
 script:
   - jekyll build --config _config.yml
-  - htmlproofer ./_site --http-status-ignore "999" --url-ignore "/chris.elsen.xyz/"
+  - htmlproofer ./_site --http-status-ignore "999" --url-ignore "/chris.elsen.xyz/,/twitter.com/"
 deploy:
   - provider: s3
     edge:
