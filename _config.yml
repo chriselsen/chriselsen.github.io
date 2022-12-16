@@ -33,3 +33,4 @@ github: chriselsen
 mastodon: noc.social/@chriselsen
 
 style: styles
+include: [".well-known"]
