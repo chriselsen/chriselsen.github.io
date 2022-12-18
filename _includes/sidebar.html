@@ -16,7 +16,9 @@
                     {% endif %}
                     
                     {% if site.flowcrypt %}
-                    <li class="website"><i class="fas fa-envelope"></i> <a rel="me" href="https://flowcrypt.com/me/{{site.flowcrypt}}" target="_blank">Encrypted Message</a></li>
+                    <li class="website"><i class="fas fa-key"></i> <a rel="me" href="https://flowcrypt.com/me/{{site.flowcrypt}}" target="_blank">Encrypted Message</a></li>
+                    
+                    <li class="website"><i class="fas fa-envelope"></i> <a rel="me" href="https://flowcrypt.com/pub/{{site.flowcrypt}}?show=pubkey" target="_blank">Encrypted Message</a></li>
                     {% endif %}
                   
                     {% if site.phone %}
