@@ -38,6 +38,10 @@
                     {% if site.websitealt %}
                     <li class="website"><i class="fas fa-network-wired"></i> <a rel="me" href="https://www.{{site.websitealt}}" target="_blank">{{site.websitealt}}</a></li>
                     {% endif %}
+                  
+                    {% if site.flowcrypt %}
+                    <li class="website"><i class="fas fa-envelope-circle-check"></i> <a rel="me" href="https://flowcrypt.com/me/{{site.flowcrypt}}" target="_blank">Encrypted Message</a></li>
+                    {% endif %}
                     
                 </ul>
             </div><!--//contact-container-->
