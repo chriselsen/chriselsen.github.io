@@ -31,6 +31,7 @@ websitealt: as213151.net
 linkedin: ChristianElsen
 github: chriselsen
 mastodon: noc.social/@chriselsen
+flowcrypt: chriselsen
 
 style: styles
 include: [".well-known"]
