@@ -41,6 +41,10 @@
                     <li class="mastodon"><i class="fab fa-mastodon"></i> <a rel="me" href="https://{{site.mastodon}}" target="_blank">{{site.mastodon}}</a></li>
                     {% endif %}
                   
+                    {% if site.bluesky %}
+                    <li class="bluesky"><i class="fab fa-bluesky"></i> <a rel="me" href="https://bsky.app/profile/{{site.bluesky}}" target="_blank">{{site.bluesky}}</a></li>
+                    {% endif %}
+
                     {% if site.websitealt %}
                     <li class="website"><i class="fas fa-network-wired"></i> <a rel="me" href="https://www.{{site.websitealt}}" target="_blank">{{site.websitealt}}</a></li>
                     {% endif %}
