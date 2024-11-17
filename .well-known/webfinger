@@ -1,21 +1,23 @@
 {
-  "subject":"acct:chriselsen@noc.social",
-  "aliases":[
-    "https://noc.social/@chriselsen",
-    "https://noc.social/users/chriselsen"
+  "subject": "acct:chriselsen@mastodon.social",
+  "aliases": [
+    "https://mastodon.social/@chriselsen",
+    "https://mastodon.social/users/chriselsen"
   ],
-  "links":[{
-      "rel":"http://webfinger.net/rel/profile-page",
-      "type":"text/html",
-      "href":"https://noc.social/@chriselsen"
+  "links": [
+     {
+      "rel": "http://webfinger.net/rel/profile-page",
+      "type": "text/html",
+      "href": "https://mastodon.social/@chriselsen"
     },
     {
-      "rel":"self",
-      "type":"application/activity+json",
-      "href":"https://noc.social/users/chriselsen"
+      "rel": "self",
+      "type": "application/activity+json",
+      "href": "https://mastodon.social/users/chriselsen"
     },
     {
-      "rel":"http://ostatus.org/schema/1.0/subscribe",
-      "template":"https://noc.social/authorize_interaction?uri={uri}"
-  }]
+      "rel": "http://ostatus.org/schema/1.0/subscribe",
+      "template": "https://mastodon.social/authorize_interaction?uri={uri}"
+    }
+  ]
 }

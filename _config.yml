@@ -30,8 +30,12 @@ website: edge-cloud.net
 websitealt: as213151.net
 linkedin: ChristianElsen
 github: chriselsen
+<<<<<<< HEAD
 mastodon: noc.social/@chriselsen
 bluesky: chris.elsen.nz
+=======
+mastodon: mastodon.social/@chriselsen
+>>>>>>> 57fd673c38ca0effae8168a458267fd90feb1e14
 #flowcrypt: chriselsen
 
 style: styles
