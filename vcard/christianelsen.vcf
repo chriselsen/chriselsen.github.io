@@ -1,0 +1,22 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Elsen;Christian;;;
+FN:Christian Elsen
+ORG:
+ADR;TYPE=WORK:
+TITLE:
+TEL;TYPE=CELL:+1(415)994-4481
+TEL;TYPE=WORK:
+TEL;TYPE=HOME:
+TEL;TYPE=MSG:
+EMAIL;TYPE=WORK:chris@chriselsen.net
+URL;TYPE=Digital Business Card:
+URL:https://chris.elsen.xyz/
+URL;TYPE=Website:https://chris.elsen.xyz/
+URL;TYPE=GitHub:https://github.com/chriselsen
+URL;TYPE=LinkedIn:https://linkedin.com/in/ChristianElsen
+URL;TYPE=Buy me a coffee:https://www.buymeacoffee.com/chriselsen
+KEY;TYPE=PGP;ENCODING=b:
+NOTE:
+UID:EnBizCard-100665315
+END:VCARD
